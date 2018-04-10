@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'contact/contact'
+
+  get 'about/about'
+
   resources :items
   
   
