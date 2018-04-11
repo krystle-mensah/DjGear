@@ -21,32 +21,73 @@
 	</head>
 
 	<body> 
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+				<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button><!-- /. navbar toggle -->
+					<%= link_to "DJGEAR", root_path, class: "navbar-brand" %>
+					</div><!-- /. nav header -->
 
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<!-- ul class="nav navbar-nav" -->
+						<!-- /. ul nav --> 
+						<ul class="nav navbar-nav navbar-right">
+							<form class="navbar-form navbar-left">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search">
+								</div><!-- /. form group -->
+								<button type="submit" class="btn btn-default">Submit</button>
+							</form><!-- /. -->
 
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Music gear <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Guitars</a></li>
+									<li><a href="#">Pianos</a></li>
+									<li><a href="#">Drums</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">Separated link</a></li>
+									<li role="separator" class="divider"></li>
+								</ul><!-- /. ul dropdown menu -->
+							</li><!-- /. li dropdown -->
+
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Studio gear <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Software</a></li>
+									<li><a href="#">Mixers</a></li>
+									<li><a href="#">Studio accessories</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">Separated link</a></li>
+									<li role="separator" class="divider"></li>
+								</ul><!-- /. ul dropdown menu -->
+							</li><!-- /. li dropdown -->
+
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dj gear <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Headphones</a></li>
+									<li><a href="#">Turntables</a></li>
+									<li><a href="#">P A and live sound</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">Separated link</a></li>
+									<li role="separator" class="divider"></li>
+								</ul><!-- /. ul dropdown menu -->
+							</li><!-- /. li dropdown -->				    
+						</ul><!-- /. ul nav right -->
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav><!-- /. nav -->
 
 		<nav>
 			<ul>
-				<li><%= link_to "Home", root_path %></li>
 				<li><%= link_to "About", about_about_path %></li>
 				<li><%= link_to "Contact", contact_contact_path %></li>
 			</ul>
