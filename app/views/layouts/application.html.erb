@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<title>DjGear</title>
-
         <!-- bootstrap -->
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -88,8 +87,8 @@
 
 		<nav>
 			<ul>
-				<li><%= link_to "About", about_about_path %></li>
-				<li><%= link_to "Contact", contact_contact_path %></li>
+				
+				
 			</ul>
 		</nav>
 
@@ -97,8 +96,50 @@
 
 		<footer id="footer">
 	        <div class="container-fluid">
-	            <p class="footer-text"> &copy; 2018 Dj GEAR | All rights reversed.</p>
-	        </div>
+				<div class="row">
+					<div class="col-sm-3">
+						<h5 class="footer_h5">Information</h5>
+						<ul class="list-unstyled">
+							<li><%= link_to "About", about_about_path, class: "footer_about_link"  %></li>
+							<li>Delivery Information</li>
+							<li>Privacy Policy</li>
+							<li>Terms & Conditions</li>
+						</ul>
+					</div><!-- ./ col -->
+					<div class="col-sm-3">
+						<h5 class="footer_h5">Customer Service</h5>
+						<ul class="list-unstyled">
+							<li><%= link_to "Contact", contact_contact_path, class: "footer_contact_link" %></li>
+							<li>Returns</li>
+							<li>Site Map</li>
+						</ul>
+					</div><!-- ./ col -->
+				
+					<div class="col-sm-3">
+						<h5 class="footer_h5">Extras</h5>
+						<ul class="list-unstyled">
+							<li>Brands</li>
+							<li>Gift Certificates</li>
+							<li>Affiliates</li>
+							<li>Specials</li>
+						</ul>
+					</div><!-- ./ col -->
+
+					<div class="col-sm-3">
+						<ul class="list-unstyled">
+						<h5 class="footer_h5">My Account</h5>
+							<li>My Account</li>
+							<li>Order History</li>
+							<li>Wish List</li>
+							<li>Newsletter</li>
+						</ul>
+					</div><!-- ./ col -->
+				</div><!-- ./ row -->
+
+				<hr>
+
+				<p class="footer-text"> &copy; 2018 Dj GEAR | All rights reversed.</p>
+			</div>
         </footer>
 	</body>
 </html>
