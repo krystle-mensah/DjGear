@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
     get 'about/about'
     
-    root 'landing_pages#index' 
+    root 'landing_pages#index'
+    
+    resources :orders, only: [:index, :show, :create, :destroy]
   
     
     
