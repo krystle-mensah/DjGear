@@ -2,12 +2,13 @@ Rails.application.routes.draw do
     resources :products
     
     resources :items
-    
-    root 'home#index'
+    get 'home/index'
     
     get 'contact/contact'
 
     get 'about/about'
+    
+    root 'landing_pages#index' 
   
     
     
