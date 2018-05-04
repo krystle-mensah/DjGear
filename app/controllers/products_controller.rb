@@ -8,14 +8,16 @@ class ProductsController < ApplicationController
     def show 
     end
 
-    def new
+	# navigating to "/products/new" will route the request to the products controller (because the first part of the URL is "products"), and it will run the new action (the second part of the URL).
+	def new
 		@product = Product.new
 	end  
 
     def edit 
     end
 
-    def create
+	# The create and update actions correspond to the new and edit actions: submitting the form in the new view sends a POST request to the create action so that the product can be saved, and submitting the edit form will send a PATCH (previously PUT) request to the update action which, in turn, updates the product.
+	def create
 		@product = Product.new(product_params) 
 
 		respond_to do |format|
