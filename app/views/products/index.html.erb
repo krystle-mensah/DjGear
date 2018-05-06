@@ -6,7 +6,8 @@
 
 
 <%= render 'shared/product', locals: { product: @product } %> 
+     
+<div class="new_product_button">
+    <%= link_to 'New Product', new_product_path, class: 'btn btn-default' %>      
+</div><!-- ./ new_product_button -->
 
-<div>     
-<%= link_to 'New Product', new_product_path, class: 'btn btn-default' %>      
-   

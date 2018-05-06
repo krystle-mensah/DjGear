@@ -2,6 +2,7 @@
     <div class="row">
         <% @products.each do |product| %>
             <div class="col-sm-3 col-md-4">
+                
                 <a href="#"><h2><%= product.name %></h2></a>
                 <p><%= product.description %></p>
                 <p><%= product.colour %></p>
@@ -9,12 +10,10 @@
                     <%= image_tag(product.image_url, class: "img-responsive") %>
                 <% end %>
                 <strong>£ 42</strong>
+                <%= link_to 'Show', product, class: 'btn btn-default' %>
+                <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-default' %>
+                <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
                 
-                <div class="btn-group" role="group" aria-label="...">
-                    <%= link_to 'Show', product, class: 'btn btn-default' %>
-                    <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-default' %>
-                    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
-                </div>
             </div><!-- ./col -->
         <% end %>
     </div><!-- /. row -->

@@ -2,14 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-a.btn.btn-default {
+.col-sx-12 {
+    position: relative;
+    top: 40px;
+}
+
+
+.new_product_button {
     position: relative;
     top: 80px;
 }
 
 
-.col-sx-12 {
+div#all_products{
     position: relative;
-    top: 40px;
+    top: 60px;
 }
 
