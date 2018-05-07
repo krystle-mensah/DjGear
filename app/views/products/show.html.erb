@@ -1,4 +1,4 @@
-<h1>Show product</h1><!-- show product from model -->
+<h1 class="show_product_title">Show product</h1><!-- show product from model -->
 
 <div class="container" id="product_show">
     <div class="row">
@@ -26,6 +26,9 @@
     </div><!-- ./ row -->
 </div><!-- ./ container -->
 
-<%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-default' %> 
-<%= link_to 'Back', products_path, class: 'btn btn-default' %>     
+<div class="row" id="edit_back_button">
+    <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-default' %> 
+    <%= link_to 'Back', products_path, class: 'btn btn-default' %>     
+</div>
+
 
