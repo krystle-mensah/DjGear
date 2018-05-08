@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-    resources :products
+    get '/products', to: 'products#index'
     
-    resources :items
     get 'home/index'
     
     get 'contact/contact'
@@ -11,6 +10,10 @@ Rails.application.routes.draw do
     root 'landing_pages#index'
     
     resources :orders, only: [:index, :show, :create, :destroy]
+
+    resources :products
+
+    resources :items
   
     
     
