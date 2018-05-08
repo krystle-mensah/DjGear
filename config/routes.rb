@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     
     get 'contact/contact'
 
+    # route for  POST form data
+    post 'contact/thank_you'
+
     get 'about/about'
     
     root 'landing_pages#index'
