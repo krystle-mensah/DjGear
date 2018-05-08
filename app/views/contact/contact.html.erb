@@ -2,27 +2,37 @@
 
 <p class="contact_email">Email: krystle.mensah@gmail.com</p>
 
+<%= flash[:notice] %>
+
 <div class="container" id="contact_form">
-    <div class="row">
-        <div class="col-sx-12">
-            <h2>contact form</h2>
-                <form action="" method="">
-                    <div class="form-group">
-                        <label for="">Your Name</label>
-                        <input type="your_name" class="form-control" id="your_name" />
-                    </div>
-                    <div class="form-group">
-                        <label for="">Email Address</label>
-                        <input type="email" class="form-control" id="email" />
-                    </div>
-                    <div class="form-group">
-                        <label for="">Enquiry</label>
-                        <textarea name="enquiry" id="input-enquiry" class="form-control"></textarea />
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" id="submit" class="btn btn-default" />
-                    </div>
-                </form>
-        </div><!-- ./ col -->
-    </div><!-- ./ row -->
+    <%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
+        <div class="row">
+            <div class="col-sx-12">
+                <h2>contact form</h2>
+                    <form action="" method="">
+                        <div class="form-group">
+                            <%= form.label :name %>
+                            <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+                        </div>
+
+                        <div class="form-group">
+                            <%= form.label :email %>
+                            <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+                        </div>
+
+                        <div class="form-group">
+                            <%= form.label :message %>
+                            <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5 %>
+                        </div>
+
+                        <div class="form-group">
+                            <%= form.submit "Send", class: "btn btn-default" %>
+                        </div>
+                    </form>            
+            </div><!-- ./ col -->
+        </div><!-- ./ row -->
+    <% end %>
 </div><!-- /.container -->
+
+
+
