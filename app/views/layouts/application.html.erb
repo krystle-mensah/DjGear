@@ -40,19 +40,14 @@
 					<ul class="nav navbar-nav navbar-right">
 						
 						<form class="navbar-form navbar-left">
-							<div class="form-group">
-								<input type="text" class="form-control">
-							</div><!-- /. form group -->
-							<button type="submit" class="btn btn-default">Submit</button>
-							
-							<%# Creating a Search Form %>
-							<%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-								<%= form.label :q, 'Search for:', class: 'btn btn-default'  %>
-								<%= form.text_field :q, id: 'q', value: params[:q], class: 'form-control' %>
-								<%= form.submit 'Search', class: 'btn btn-default' %>
-							<% end %>
-
-						</form><!-- /. -->
+							<%# <div class="form-group"> %>
+								<%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+								<%= form.text_field :q, id: 'q', value: params[:q], class: 'form-control', placeholder: "What are you looking for?" %>
+								<%= form.label :q, 'Search:', class: 'btn btn-default', id: 'search_btn_nav' %>
+								<%= form.submit 'Search' %> 
+							    <% end %>
+							<%# </div><!-- /. form group --> %>
+						</form><!-- /. navbar-left -->
 
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products<span class="caret"></span></a>
