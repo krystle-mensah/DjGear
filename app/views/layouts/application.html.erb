@@ -37,17 +37,13 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<!-- ul class="nav navbar-nav" -->
 					<!-- /. ul nav --> 
-					<ul class="nav navbar-nav navbar-right">
-						
-						<form class="navbar-form navbar-left">
-							<%# <div class="form-group"> %>
-								<%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-								<%= form.text_field :q, id: 'q', value: params[:q], class: 'form-control', placeholder: "What are you looking for?" %>
-								<%= form.label :q, 'Search:', class: 'btn btn-default', id: 'search_btn_nav' %>
-								<%= form.submit 'Search' %> 
-							    <% end %>
-							<%# </div><!-- /. form group --> %>
-						</form><!-- /. navbar-left -->
+					<ul class="nav navbar-nav navbar-right">							
+						<li>
+							<%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+							<%= form.text_field :q, id: 'q', value: params[:q], class: "form-control", placeholder: " what are you looking for?" %>
+							<%= form.submit 'Search', class: 'btn btn-primary', id: "searchbutton"%>
+							<% end %>
+                        </li>
 
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products<span class="caret"></span></a>
