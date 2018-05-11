@@ -1,0 +1,13 @@
+<%# HTML template that gets sent as the email. These behave just like any of your other views: you can insert ruby tags, instance variables, and render partials. %>
+
+
+<table>
+    <tbody>
+        <tr>
+            <td><p>You have received a new contact form message. The contents of the message are:</p></td>
+        </tr>
+        <tr>
+            <td><p><%= @message %></p></td>
+        </tr>
+    </tbody>
+</table>
