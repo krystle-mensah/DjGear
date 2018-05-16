@@ -51,6 +51,17 @@
 							<li><%= link_to "Contact us", contact_contact_path, role: "button" %></li>
 						</li><!-- /. dropdown -->				    
 					</ul><!-- /. ul nav right -->
+					<ul class="nav pull-right">
+						<li>
+						 <%# this takes advantage of the user_signed_in? helper that Devise provides, which returns true if someone is signed in. %>
+						<% if user_signed_in? %>
+							<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+						<% else %>
+							<%= link_to('Login', new_user_session_path) %>
+						<% end %>
+						</li>
+					</ul>
+
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav><!-- /. nav -->
