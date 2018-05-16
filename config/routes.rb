@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :users
-    resources :orders, only: [:index, :show, :create, :destroy]
+	devise_for :users
+	resources :users
+	resources :orders, only: [:index, :show, :create, :destroy]
 
     resources :products
 
@@ -11,16 +11,16 @@ Rails.application.routes.draw do
     
     get 'home/index'
     
-    get 'contact/contact'
-
-    get 'about/about'
+    # contact routes 
+    root 'contact#contact'
+    get 'contact/contact'    
+    post '/contact/thank_you'
     
-    post 'contact/thank_you'
-    # get 'thank_you'
+    get 'about/about'
 
     get 'landing_pages/index'
     
     
-    root 'landing_pages#index'  
+    get 'landing_pages/index'  
 end   
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
