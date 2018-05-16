@@ -14,9 +14,8 @@ Rails.application.routes.draw do
     # contact routes 
     root 'contact#contact'
     get 'contact/contact'    
-    post 'contact/thank_you'
-    # get 'thank_you'
-
+    post '/contact/thank_you'
+    
     get 'about/about'
 
     get 'landing_pages/index'
