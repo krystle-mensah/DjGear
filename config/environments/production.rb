@@ -100,4 +100,7 @@ ActionMailer::Base.smtp_settings = {
   enable_starttls_auto: true
 }
 
-config.action_mailer.default_url_options = { host: ‘djgear.herokuapp.com’ }
+
+# when i push to heroku this line of code from the task wont allow me to push so i have edited out
+
+# config.action_mailer.default_url_options = { host: ‘djgear.herokuapp.com’ }
