@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     get 'home/index'
     
     # contact routes 
-    root 'contact#contact'
     get 'contact/contact'    
     post '/contact/thank_you'
     
@@ -21,6 +20,6 @@ Rails.application.routes.draw do
     get 'landing_pages/index'
     
     
-    get 'landing_pages/index'  
+    root 'landing_pages#index'  
 end   
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
