@@ -72,9 +72,14 @@
 	        <div class="container">
 
 				<%# This block will display a welcome message when you sign in. %>
-				<p class="notice"><%= notice %></p>
-       			<p class="alert"><%= alert %></p> 
-
+				<% if notice %>
+					<p id="notice" class="alert alert-info"><%= notice %></p>
+       			<% end %>
+				
+				<% if alert %>
+					<p id="alert" class="alert"><%= alert %></p> 
+				<% end %>		
+				
 				<hr>
 
 				<p class="footer-text"> &copy; 2018 Dj GEAR | All rights reversed.</p>
