@@ -41,9 +41,11 @@
 						<li>
 							<%= form_with(url: products_path, method: 'get', local: true) do |form| %>
 							<%= form.text_field :q, id: 'q', value: params[:q], class: "form-control", placeholder: " what are you looking for?" %>
+						</li>
+						<li>
 							<%= form.submit 'Search', class: 'btn btn-primary', id: "searchbutton"%>
 							<% end %>
-                        </li>
+						</li>
 						
 						<li class="dropdown">
 							<li><%= link_to "products", products_path, role: "button" %></li>
