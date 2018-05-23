@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
+	# The below code makes sure the user is signed in before trying to access the users_controller
+	before_action :authenticate_user
+	# The below code will find the user, set the @user variable, and check their abilities to make sure they are authorized to perform that action.
 	load_and_authorize_resource
 	
 	# GET /users
