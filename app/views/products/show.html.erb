@@ -26,6 +26,8 @@
     </div><!-- ./ row -->
 </div><!-- ./ container -->
 
+<%= @product.highest_rating_comment %>
+
 <div class="row" id="edit_back_button">
     <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-default' %> 
     <%= link_to 'Back', products_path, class: 'btn btn-default' %>     
