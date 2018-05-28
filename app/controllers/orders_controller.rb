@@ -1,5 +1,6 @@
-# meaning it has access to all the methods inside your application_controller.rb file
-class OrdersController < ApplicationController 
+class OrdersController < ApplicationController
+    before_action :authenticate_user!
+     
     def index
         # all the orders made by users
         @orders = Order.all
