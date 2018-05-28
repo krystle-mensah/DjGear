@@ -1,3 +1,6 @@
+# Let's start by defining the ability for
+# users to manage themselves.
+
 # below code (defining user permissions)
 class Ability 
     include CanCan::Ability
