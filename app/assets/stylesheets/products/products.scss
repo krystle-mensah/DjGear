@@ -4,12 +4,6 @@
 }
 
 
-.new_product_button {
-    position: absolute;
-    bottom: 692px;
-    left: 200px;
-}
-
 
 div#all_products{
     position: relative;
@@ -18,7 +12,14 @@ div#all_products{
 }
 
 
+
 h1.products {
     top: 50px
-} 
+}
+
+
+.new-product-button{ 
+    float: right;
+    margin-right: 30px;
+}
 

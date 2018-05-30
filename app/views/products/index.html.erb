@@ -1,13 +1,27 @@
-<%# http://localhost:3000/products %>
+
+
+<div class="new-product-button">
+    
+        
+        <%= link_to 'New Product', new_product_path, class: 'btn btn-primary' %>  
+    
+</div><!-- ./ -->
+
+<p class="body-text" id="notice"><%= notice %></p>
 
 <h1 class="products">Products</h1>
 
-<p id="notice"><%= notice %></p>
+<div class="container" id="all_products">    
+    <div class="row">
+        <% @products.each do |product| %> 
+            <%= render 'partials/product', locals: { product: @product } %> 
+       <% end %>
+    </div><!-- ./ row -->
+</div><!-- ./ container -->
 
 
-<%= render 'partials/product', locals: { product: @product } %> 
+
+
      
-<div class="new_product_button">
-    <%= link_to 'New Product', new_product_path, class: 'btn btn-default' %>      
-</div><!-- ./ new_product_button -->
+
 
