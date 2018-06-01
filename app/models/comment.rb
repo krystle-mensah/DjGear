@@ -3,9 +3,11 @@ class Comment < ApplicationRecord
 	belongs_to :product
 
 
+	# this is where we define are scope
 	scope :rating_desc, -> { order(rating: :desc) }
+    # scope :rating_asc, -> { order(rating: :asc) }
 
-end
+end 
 
 
 

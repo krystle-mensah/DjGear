@@ -53,8 +53,8 @@
 
         <p id="notice"><%= notice %></p>
             <!-- shows a single product’s details -->
-
-        <%# this is a scope. it well display my top rated product here %>
+           
+        <%# for the scope view from the commit model. scope :rating_desc, -> { order(rating: :desc) } %>
         <%= @product.highest_rating_comment %>
 
     </div><!-- ./ row -->

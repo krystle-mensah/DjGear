@@ -8,11 +8,11 @@ class Product < ApplicationRecord
     end
     
     # rate the first commit in descending order
-    def highest_rating_comment
-        comments.rating_desc.first
-    end
+    # def highest_rating_comment
+        # comments.rating_desc.first
+    # end
     
-    def lowest_rating_comment
-        comments.rating_asc.first
-    end 
+    # def lowest_rating_comment
+        # comments.rating_asc.first
+    # end 
 end  
