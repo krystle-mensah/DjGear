@@ -11,7 +11,9 @@ class ProductsController < ApplicationController
 		end
 	end
     
-    def show 
+	# retrieving the comments to display on the show page
+	def show
+		@comments = @product.comments.order("created_at DESC") 
     end
 
 	# navigating to "/products/new" will route the request to the products controller (because the first part of the URL is "products"), and it will run the new action (the second part of the URL).

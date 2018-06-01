@@ -6,7 +6,8 @@ class Product < ApplicationRecord
         like_string = Rails.env.production? ? "ilike" : "LIKE"
         Product.where("name #{like_string} ?", "%#{search_term}%")
     end
-    # below code - custom method for our product to return the comment with the highest rating.
+    
+    # rate the first commit in descending order
     def highest_rating_comment
         comments.rating_desc.first
     end
@@ -14,4 +15,4 @@ class Product < ApplicationRecord
     def lowest_rating_comment
         comments.rating_asc.first
     end 
-end 
+end  

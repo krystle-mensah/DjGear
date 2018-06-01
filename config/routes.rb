@@ -4,6 +4,12 @@ Rails.application.routes.draw do
 	resources :orders, only: [:index, :show, :create, :destroy]
 
     resources :products
+    
+    # This is called a nested resource. 
+    resources :products do
+        resources :comments
+    end
+    # resources :users
 
     resources :items
     
