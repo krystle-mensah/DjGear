@@ -12,6 +12,7 @@ class Product < ApplicationRecord
         comments.rating_desc.first
     end
     
+    # rate first commit ascending order
     def lowest_rating_comment
         comments.rating_asc.first
     end 

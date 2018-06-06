@@ -13,7 +13,32 @@
  *= require_tree .
  *= require_self
  */
-// h1 {
+
+.page-wrap {
+    margin-top: 70px;
+    margin-left: 20px;
+    margin-bottom: 70px;
+}
+
+
+
+
+.new-product-button{
+    float: right;
+    margin-right: 30px;    
+}
+
+
+
+
+a {
+    color: #ffffff;
+}
+
+
+
+
+ // h1 {
 //     position: relative;
 //     /*top: 50px;*/
 // }
@@ -24,29 +49,6 @@
 // p {
 //     position: relative;
 // }
-
-
-
-
-.page-wrap {
-    margin-top: 70px;
-}
-
-
-
-
-.new-product-button{
-    float: right;
-    margin-right: 30px;
-    
-}
-
-
-
-
-a {
-    color: #ffffff;
-}
 
 
 
