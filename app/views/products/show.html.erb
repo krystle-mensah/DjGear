@@ -42,10 +42,16 @@
             </ul><!-- ./ links to pages -->    
         </div><!-- ./ admin-links -->
 
+        <%# this is a scope. it well display my top rated product here %>
+        <%= @product.highest_rating_comment %>
+        
+        
+        <%# _new_comment.html.erb %>
         <%= render 'new_comment' %>
 
         <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
   
+        <%# _comments.html.erb %>
         <%= render 'comments' %>
 
         <%# <%= will_paginate @comments %>
@@ -54,8 +60,9 @@
         <p id="notice"><%= notice %></p>
             <!-- shows a single product’s details -->
 
-        <%# this is a scope. it well display my top rated product here %>
-        <%= @product.highest_rating_comment %>
+        <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>    
+
+        
 
     </div><!-- ./ row -->
 </div><!-- ./ container -->

@@ -12,15 +12,40 @@
  *
  *= require_tree .
  *= require_self
+
+ *= require jquery.raty
+
+
  */
-h1 {
-    position: relative;
-    /*top: 50px;*/
+// h1 {
+//     position: relative;
+//     /*top: 50px;*/
+// }
+
+
+// p {
+//     position: relative;
+// }
+
+
+
+
+.page-wrap {
+    margin-top: 70px;
 }
 
 
-p {
-    position: relative;
+
+
+.new-product-button{
+    float: right;
+    margin-right: 30px;
+    
 }
 
 
+
+
+a {
+    color: #ffffff;
+}

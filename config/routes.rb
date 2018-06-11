@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
 	devise_for :users
 	resources :users
 	resources :orders, only: [:index, :show, :create, :destroy]
 
     resources :products
     
-    # This is called a nested resource. 
+    # This is called a nested resource. this is a defintion 
     resources :products do
         resources :comments
     end
