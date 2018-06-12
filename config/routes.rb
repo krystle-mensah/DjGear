@@ -4,13 +4,12 @@ Rails.application.routes.draw do
 	resources :users
 	resources :orders, only: [:index, :show, :create, :destroy]
 
-    resources :products
+    # resources :products
     
     # This is called a nested resource. this is a defintion 
     resources :products do
         resources :comments
     end
-    # resources :users
 
     resources :items
     
@@ -28,5 +27,7 @@ Rails.application.routes.draw do
     
     
     root 'landing_pages#index'  
-end   
+end
+
+
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
