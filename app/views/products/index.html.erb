@@ -14,6 +14,7 @@
 <div class="container" id="all_products">    
     <div class="row">
         <% @products.each do |product| %> 
+            <%# _products.html.erb %>
             <%= render 'products/product', locals: { product: @product } %> 
        <% end %>
     </div><!-- ./ row -->
