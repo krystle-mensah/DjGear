@@ -5,7 +5,7 @@
             <div>
             <%= image_tag(@product.image_url, class: "img-responsive product-show-image img-zoom", data_zoom_image: @product.image_url) %>
             </div>
-        </div><!-- ./ col 1 -->
+        </div><!-- ./ col -->
         
         
         <div class="col-md-6 col-xs-12">
@@ -18,22 +18,29 @@
                     </p>
                 <% end %> <!-- end of caching a product -->
             </div><!-- ./ product info box -->
+            
             <br>
+            
             <p class="product-info-text price-text">
                 <strong>Price: </strong>
-                <%# <%= number_to_currency(@product.price, unit: '£', precision: 2) %>
+                <!-- %= number_to_currency(@product.price, unit: '£', precision: 2) % -->
             </p><!-- ./ product-info-text price-text -->
-            <%# <p class="product-info-text">Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>
-            
-            <!-- higest rating product -->
+
+           
+            <p class="product-info-text">Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div></p>
+            <%# higest rating product %>
+            <%# this is a scope. it well display my top rated product here %>
+            <p class="product-info-text"> Highest Rating: <%= @product.highest_rating_comment %></p>
             <br >
-            <!-- stripe checkout -->
+            <%# stripe checkout %>
             <div class="product-info-text">
                 <%= form_with(url: '/payments/create') do |form| %>
                     <%# <%= render partial: "shared/stripe_checkout_button" %>
                     <%= hidden_field_tag(:product_id, @product.id) %>
                 <% end %>
+            
             </div><!-- ./ product info text -->   
+        
         </div><!-- ./ col 2 -->
 
         <div class="admin-links">
@@ -44,8 +51,6 @@
         </div><!-- ./ admin-links -->
 
 
-        <%# this is a scope. it well display my top rated product here %>
-        <%= @product.highest_rating_comment %>
         
         
         <%# _new_comment.html.erb %>
@@ -61,13 +66,6 @@
 
         <p id="notice"><%= notice %></p>
             <!-- shows a single product’s details -->
-
-        
-        <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>  
-
-          
-
-        
 
     </div><!-- ./ row -->
 </div><!-- ./ container -->
