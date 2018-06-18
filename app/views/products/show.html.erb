@@ -3,7 +3,7 @@
         
         <div class="col-md-6 col-xs-12">
             <div>
-            <%= image_tag(@product.image_url, class: "img-responsive product-show-image img-zoom", data_zoom_image: @product.image_url) %>
+                <%= image_tag(@product.image_url, class: "img-responsive product-show-image img-zoom", data_zoom_image: @product.image_url) %>
             </div>
         </div><!-- ./ col -->
         
@@ -28,10 +28,12 @@
 
            
             <p class="product-info-text">Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div></p>
-            <%# higest rating product %>
+            
             <%# this is a scope. it well display my top rated product here %>
             <p class="product-info-text"> Highest Rating: <%= @product.highest_rating_comment %></p>
+            
             <br >
+            
             <%# stripe checkout %>
             <div class="product-info-text">
                 <%= form_with(url: '/payments/create') do |form| %>
@@ -51,8 +53,6 @@
         </div><!-- ./ admin-links -->
 
 
-        
-        
         <%# _new_comment.html.erb %>
         <%= render 'new_comment' %>
 
