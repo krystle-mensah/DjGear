@@ -1,15 +1,18 @@
 // # the doller sign mean jquery and jquery is a libry of javacode
 // # (..) is the selector you want to apply any jQuery code to. in this it is the document.
-// # .on means method on
+// # .on means method on. this is the event
 // # it gets applied on the document but it uses the turbolink gem.
-// # that first line was a function with a method in it 
+// # that first line was a function with a method in it
 
+// jquery is selecting the document with the on method and passing turbolinks:load and function parameters of the on method
+// jQuery then selects the rating class. then is uses the raty method. the raty method goes into the asset path and gets the image and does something to it   
 
 $(document).on('turbolinks:load', function(){
     $('.rating').raty({
         starHalf: '<%= asset_path 'star-half.png' %>',
         starOff: '<%= asset_path 'star-off.png' %>',
         starOn: '<%= asset_path 'star-on.png' %>',
+        // its turns the star into a number
         scoreName: 'comment[rating]'
     });
   
