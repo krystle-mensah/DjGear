@@ -9,7 +9,7 @@ class Product < ApplicationRecord
     
     # rate the first commit in descending order
     def highest_rating_comment
-        comments.rating_desc.first.body
+        comments.rating_desc.first
     end
     
     # rate first commit ascending order
@@ -20,4 +20,8 @@ class Product < ApplicationRecord
     def average_rating
         comments.average(:rating).to_f
     end
-end   
+
+    def highest_rating_body
+        comments.rating_desc.first.body
+    end
+end    

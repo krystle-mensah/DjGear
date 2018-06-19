@@ -30,9 +30,11 @@
             <p class="product-info-text">Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div></p>
             
             <%# this is a scope. it well display my top rated product here %>
-            <p class="product-info-text"> Highest Rating: <%= @product.highest_rating_comment %></p>
-            
+            <p class="product-info-text"> Highest Rating: <%= @product.highest_rating_comment.body %></p>
+
             <br >
+
+
             
             <%# stripe checkout %>
             <div class="product-info-text">
