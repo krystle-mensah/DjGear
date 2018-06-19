@@ -1,12 +1,22 @@
 class Product < ApplicationRecord
+
+
+    # Let’s add a validation to the Product model that requires all new products to have a name provided.
+    validates :name, presence: true
+    validates :name, presence: true
+    validates :description, presence: true
+    validates :color, presence: true
+    validates :price, presence: true
     has_many :orders
     has_many :comments
-# Let’s add a validation to the Product model that requires all new products to have a name provided.
-    validates :name, presence: true
 
     def self.search(search_term)
         like_string = Rails.env.production? ? "ilike" : "LIKE"
         Product.where("name #{like_string} ?", "%#{search_term}%")
+    end
+
+    def average_rating
+        comments.average(:rating).to_f
     end
 
     # rate the first commit in descending order
@@ -17,10 +27,6 @@ class Product < ApplicationRecord
     # rate first commit ascending order
     def lowest_rating_comment
         comments.rating_asc.first
-    end
-
-    def average_rating
-        comments.average(:rating).to_f
     end
 
     def highest_rating_body
