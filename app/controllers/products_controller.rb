@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
     		else
     		    @products = Product.all
     		end
-	  end
+	end
 
 
 	# retrieving the comments to display on the show page
