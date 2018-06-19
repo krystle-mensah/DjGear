@@ -1,13 +1,13 @@
 <div class="container" id="product_show">
     <div class="row" data-product-id="<%= @product.id %>">
-        
+
         <div class="col-md-6 col-xs-12">
             <div>
                 <%= image_tag(@product.image_url, class: "img-responsive product-show-image img-zoom", data_zoom_image: @product.image_url) %>
             </div>
         </div><!-- ./ col -->
-        
-        
+
+
         <div class="col-md-6 col-xs-12">
             <div class="product-info-box">
                 <% cache @product do %> <!-- to cache a product -->
@@ -18,40 +18,40 @@
                     </p>
                 <% end %> <!-- end of caching a product -->
             </div><!-- ./ product info box -->
-            
+
             <br>
-            
+
             <p class="product-info-text price-text">
                 <strong>Price: </strong>
                 <!-- %= number_to_currency(@product.price, unit: '£', precision: 2) % -->
             </p><!-- ./ product-info-text price-text -->
 
-           
+
             <p class="product-info-text">Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div></p>
-            
+
             <%# this is a scope. it well display my top rated product here %>
             <p class="product-info-text"> Highest Rating: <%= @product.highest_rating_comment.body %></p>
 
             <br >
 
 
-            
+
             <%# stripe checkout %>
             <div class="product-info-text">
                 <%= form_with(url: '/payments/create') do |form| %>
                     <%# <%= render partial: "shared/stripe_checkout_button" %>
                     <%= hidden_field_tag(:product_id, @product.id) %>
                 <% end %>
-            
-            </div><!-- ./ product info text -->   
-        
+
+            </div><!-- ./ product info text -->
+
         </div><!-- ./ col 2 -->
 
         <div class="admin-links">
             <ul class="links-to-pages">
-                <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-default' %> 
-                <%= link_to 'Back', products_path, class: 'btn btn-default' %> 
-            </ul><!-- ./ links to pages -->    
+                <%= link_to 'Edit', edit_product_path(@product), class: 'btn btn-default' %>
+                <%= link_to 'Back', products_path, class: 'btn btn-default' %>
+            </ul><!-- ./ links to pages -->
         </div><!-- ./ admin-links -->
 
 
@@ -59,11 +59,11 @@
         <%= render 'new_comment' %>
 
         <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-  
+
         <%# _comments.html.erb %>
         <%= render 'comments' %>
 
-        <%# <%= will_paginate @comments %>
+        <%= will_paginate @comments %>
 
 
         <p id="notice"><%= notice %></p>
@@ -71,10 +71,3 @@
 
     </div><!-- ./ row -->
 </div><!-- ./ container -->
-
-
-
-
-
-
-
