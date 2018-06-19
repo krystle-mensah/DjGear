@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
+
     def create
         @product = Product.find(params[:product_id])
         @comment = @product.comments.new(comment_params)
         @comment.user = current_user
-        @comment.save
-        redirect_to product_path(@product)
-
-
+        # @comment.save
+        @user = current_user
+        # redirect_to product_path(@product)
         respond_to do |format|
             if @comment.save
                 format.html { redirect_to @product, notice: 'Review was created successfully.' }
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
             end
         end
 
-     end #end create
+    end #end create
 
     def destroy
     end
