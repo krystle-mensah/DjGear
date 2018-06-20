@@ -31,4 +31,4 @@ class Product < ApplicationRecord
     def highest_rating_body
         comments.rating_desc.first.body
     end
-end
+end 
