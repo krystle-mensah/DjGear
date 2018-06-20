@@ -1,11 +1,11 @@
 class Product < ApplicationRecord
 
 
-    # Let’s add a validation to the Product model that requires all new products to have a name provided.
+    # validation to the Product model that requires all new products to have a name provided.
     validates :name, presence: true
-    validates :description, presence: true
-    validates :color, presence: true
-    validates :price, presence: true
+    # validates :description, presence: true
+    # validates :colour, presence: true
+    # validates :price, presence: true
     has_many :orders
     has_many :comments
 

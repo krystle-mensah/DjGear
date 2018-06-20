@@ -4,9 +4,9 @@ class ProductsController < ApplicationController
     def index
         @products = Product.all.paginate(page: params[:page], per_page: 5)
     		if params[:q]
-    			  search_term = params[:q]
-    			  # return our filtered list here
-    			  @products = Product.search(search_term)
+    			search_term = params[:q]
+    			# return our filtered list here
+    			@products = Product.search(search_term)
     		else
     		    @products = Product.all
     		end
@@ -18,8 +18,7 @@ class ProductsController < ApplicationController
 		@comments = @product.comments.order("created_at DESC")
         @comments = @product.comments.paginate(page: params[:page], per_page: 5)
     end
-
-	# navigating to "/products/new" will route the request to the products controller (because the first part of the URL is "products"), and it will run the new action (the second part of the URL).
+	
   	def new
   		@product = Product.new
   	end
