@@ -42,10 +42,11 @@
 <section id="featured_product">  
     <div class="container">
         <h1>Featured Product:</h1>
-            <div class="box">
+            <div class="row">
                 <%= image_tag@featured_product.image_url %>
                 <h3><%= @featured_product.name %></h3>
-                <%= @featured_product.description %>
+                <p><%= @featured_product.description %></p>
             </div><!-- ./ box -->
     </div><!-- ./  container -->
-</section><!-- ./ featured_product --> 
+</section><!-- ./ featured_product -->
+ 
