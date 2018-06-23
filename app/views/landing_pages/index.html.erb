@@ -1,5 +1,7 @@
 <header>
-    <h1>Affordable dj equipment</h1>
+    <div class="container">
+        <h1 class="page-header">Affordable dj equipment</h1>     
+    </div><!-- ./ container -->   
 </header>
 
 <section id="Bootstrap_carousel">
@@ -42,7 +44,7 @@
 <section id="featured_product">  
     <div class="container">
         <h1>Featured Product:</h1>
-            <div class="row">
+            <div class="box">
                 <%= image_tag@featured_product.image_url %>
                 <h3><%= @featured_product.name %></h3>
                 <p><%= @featured_product.description %></p>

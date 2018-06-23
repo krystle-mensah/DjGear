@@ -8,14 +8,21 @@
 <p class="body-text" id="notice"><%= notice %></p>
 
 
-<h1 class="products">Products</h1>
+<header>
+	<div class="container">
+		<h1 class="page-header">Products</h1>
+	</div><!-- ./ container -->
+</header>
 
 
-<div class="container" id="all_products">
-    <div class="row">
+<section class="all_products">
+	<div class="container">
+	    <div class="row">
 
-        <%# _products.html.erb %>
-        <%= render 'products/product', locals: { product: @product } %>
+	        <%# _products.html.erb %>
+	        <%= render 'products/product', locals: { product: @product } %>
 
-    </div><!-- ./ row -->
-</div><!-- ./ container -->
+	    </div><!-- ./ row -->
+	</div><!-- ./ container -->	
+</section><!-- ./ all products -->
+
