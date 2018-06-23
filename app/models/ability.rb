@@ -9,7 +9,8 @@ class Ability
     def initialize(user)
         user ||= User.new # guest user (not logged in)
         if user.admin?
-        	can:manage, :all
+        	# The can method is used to define permissions. The first one is the action you're setting the permission for and the second one is the class of object you're setting it on.
+            can:manage, :all
         else
 	        # action to the argument can. :manage matches any action on the User controller, meaning any user can manage (perform any action) with a User object. 
 	        can :manage, User, id: user.id
