@@ -2,10 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-p.about_intro {
-    top: 50px;
+// SIDEBAR
+
+aside#sidebar{
+	float: right;
+	width: 30%;
+	margin-top: 10px;
 }
 
-h1.about {
-    top: 50px;
+// ARTICLE 
+
+article#main_col{
+	float: left;
+	width: 65%;
+}
+
+.dark{
+	padding: 15px;
+	background-color: #f2f2f2;
+	border: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: black;
 }

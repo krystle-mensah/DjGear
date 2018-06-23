@@ -1,7 +1,8 @@
-<h1 class="new_product_title">New product</h1> 
+<header>
+	<div class="container">
+		<h1 class="page-header">New product</h1> 
+	</div>
+</header>
 
-<%= render partial: 'partials/form', locals: { product: @product } %> 
 
-
-<%= link_to 'Back', products_path, class: 'btn btn-default' %>   
-
+<%= render partial: 'partials/form', locals: { product: @product } %>  
