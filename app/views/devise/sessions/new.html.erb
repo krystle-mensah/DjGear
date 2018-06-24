@@ -2,13 +2,13 @@
 
 <header>
     <div class="container">
-        <h2 class="page-header">Log in</h2>    
+        <h2 class="page-header">Please log in</h2>    
     </div>
 </header>
 
 <section class="login">
     <div class="container">
-        <div class="row">
+        <div class="form-login">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <div class="form-group">
                     <%= f.label :email %><br />

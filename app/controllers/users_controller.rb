@@ -7,14 +7,14 @@ class UsersController < ApplicationController
 	# What it means is, before any action is run in this controller, call the method set_user. 
 	
 	# The below code makes sure the user is signed in before trying to access the users_controller
-	before_action :authenticate_user
+	before_action :authenticate_user!
 	# The below code will find the user, set the @user variable, and check their abilities to make sure they are authorized to perform that action.
 	load_and_authorize_resource
 	
 	# GET /users
 	# GET /users.json
 	def index
-		@users = User.all
+		@users = User.all 
 	end
 
 	# GET /users/1

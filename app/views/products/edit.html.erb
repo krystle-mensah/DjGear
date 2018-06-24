@@ -1,11 +1,7 @@
-<%# http://localhost:3000/products/1/edit %>
+<header>
+	<div class="container">
+		<h1 class ="page-header">Edit product</h1>
+	</div>
+</header>
 
-<h1 class ="edit_product_title">Edit product</h1>
-
-<!-- which updates a product’s details -->
-
-
-<%= render partial: 'partials/form', locals: { product: @product } %> <!-- The form being referenced here is a type of view called a partial templete. The parameters is "product" so im keeping the partial word. im not sure. This will enable you to access the product variable inside the partial. -->
-
-<%= link_to 'Show', @product, class: 'btn btn-default' %>
-<%= link_to 'Back', products_path, class: 'btn btn-default' %>    
+<%= render partial: 'partials/form', locals: { product: @product } %> 
