@@ -1,14 +1,12 @@
-# in order to get access to the configuration we need to write RSpec tests.
 require 'rails_helper'
-
-context "when the product has comments" do
-
 # to tell RSpec which model we want to test
-	describe Product do
-		let(:product) { Product.create!(name: "custom bike", description: "awesome bike", colour: "red", price: "290") }
 
+RSpec.describe Product, :type => :model do
+	context "when the product has comments" do
 
-		let(:user) { User.create!(email: "random@emil.com",first_name: "User", last_name: "random",admin: false, password: "Yellow123") }
+		let(:product) { Product.create!(name: "custom bike", description: "awesome bike", colour: "red" ) }
+
+		let (:user) {User.create(first_name: "Mark", last_name:"Johnson", email: "MPrice3@hotmail.com", password: "23478734")}
 
 
 		before do
@@ -22,9 +20,12 @@ context "when the product has comments" do
 			expect(product.average_rating).to eq 3
 		end
 
-
+		
 		it "is not valid without a name" do
-	        expect(Product.new(description: "")).not_to be_valid
+	        expect(Product.new(description: "cool bike")).not_to be_valid
 	    end
+
+
+
      end 
 end
