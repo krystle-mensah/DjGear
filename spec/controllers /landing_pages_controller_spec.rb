@@ -9,3 +9,6 @@ describe LandingPagesController, type: :controller do
 		end
 	end
 end
+
+# task 6.3 
+# finished looking at this 
