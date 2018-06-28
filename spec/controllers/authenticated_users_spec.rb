@@ -3,7 +3,7 @@ require 'rails_helper'
 describe UsersController, type: :controller do
 	
 # i generated the password randomly not sure if that was correct
-	let(:user) { User.create!(email: 'krystle.mensah@gmail.com', password: 'M#CB;7dq]n') }
+	let(:user) { User.create!(email: 'krystle.mensah@gmail.com', password: '12345') }
 	
 	describe 'GET #show' do
 

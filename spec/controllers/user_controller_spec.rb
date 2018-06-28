@@ -1,5 +1,3 @@
-require_relative 'support/controller_macros'
-
 require 'rails_helper'
 
 
