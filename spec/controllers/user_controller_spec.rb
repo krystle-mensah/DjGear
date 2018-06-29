@@ -12,6 +12,3 @@ describe UsersController, type: :controller do
     end
 
 end
-
-# task 6.3 
-# fnished 
