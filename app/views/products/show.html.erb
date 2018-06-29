@@ -65,5 +65,9 @@
         <p id="notice"><%= notice %></p>
         <!-- shows a single product’s details -->
 
+        <%= form_with(url: '/payments/create') do |form| %>
+            <%= render partial: "partials/stripe_checkout_button" %>
+        <% end %>
+
     </div><!-- ./ row -->
 </div><!-- ./ container -->
