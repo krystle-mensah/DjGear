@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
         # get '/user/sign_up'
 
-
+        post 'payments/create'
 
         # resources :products
         # This is called a nested resource. this is a defintion 
