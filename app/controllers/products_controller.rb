@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
     before_action :set_product, only: [:show, :edit, :update, :destroy]
 
     def index
+        byebug
         @products = Product.all.paginate(page: params[:page], per_page: 5)
     		if params[:q]
     			search_term = params[:q]
