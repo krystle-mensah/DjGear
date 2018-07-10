@@ -2,12 +2,15 @@ class ProductsController < ApplicationController
     before_action :set_product, only: [:show, :edit, :update, :destroy]
 
     def index
+        #if Rails.env.development?
+        #byebug
+        #end 
         @products = Product.all.paginate(page: params[:page], per_page: 5)
     		if params[:q]
-    			search_term = params[:q]
-    			# return our filtered list here
-    			@products = Product.search(search_term)
-    		else
+                search_term = params[:q]
+                # return our filtered list here
+                @products = Product.search(search_term)
+            else
     		    @products = Product.all
     		end
 	end
@@ -68,6 +71,6 @@ class ProductsController < ApplicationController
 
     # This method acts as a whitelist filter for data that gets saved into the database—it's a security feature ensuring that users won’t be able to update fields that you don’t want them to unless allowed by your application
     def product_params
-      	params.require(:product).permit(:name, :description, :image_url, :colour)
+      	params.require(:product).permit(:name, :description, :image_url, :colour, :price)
 	end
 end
