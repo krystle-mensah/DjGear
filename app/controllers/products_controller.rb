@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
     before_action :set_product, only: [:show, :edit, :update, :destroy]
 
     def index
-        byebug
         @products = Product.all.paginate(page: params[:page], per_page: 5)
     		if params[:q]
     			search_term = params[:q]
@@ -29,7 +28,6 @@ class ProductsController < ApplicationController
 
 	# The create and update actions correspond to the new and edit actions: submitting the form in the new view sends a POST request to the create action so that the product can be saved, and submitting the edit form will send a PATCH (previously PUT) request to the update action which, in turn, updates the product.
   	def create
-        byebug
         @product = Product.new(product_params)
       	respond_to do |format|
   			if @product.save
