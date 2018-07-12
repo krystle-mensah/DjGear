@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
     post '/rate' => 'rater#create', :as => 'rate'
-    	devise_for :users,  path: '', path_names: { sign_in: 'login', sign_out: 'logout' }, controllers: { registrations: "users/registrations" }
+    	devise_for :users, path:'', path_names: { sign_in: 'login', sign_out: 'logout', }, controllers: { registration: 'register', sign_up: ''  }
         
         resources :users
-    	resources :orders, only: [:index, :show, :create, :destroy]
-
-        # get '/user/sign_up'
+    	
+        resources :orders, only: [:index, :show, :create, :destroy]
 
         post 'payments/create'
 
