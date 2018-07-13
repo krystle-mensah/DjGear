@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :edit, :update, :destroy]
 	# above code This type of method call is called a callback. The before_action part is called a filter
-
+	before_action :set_user, only: [:show, :edit, :update, :destroy]
 	# The next parameter means that it should only be run for the actions inside that array: show, edit, update, and destroy.
 
 	# What it means is, before any action is run in this controller, call the method set_user. 
