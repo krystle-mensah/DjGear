@@ -55,13 +55,10 @@
 
         <%# stripe checkout %> 
             <div class="product-info-text">
-                <%= form_with(url: '/payments/create') do |form| %>
+                <%= form_tag "/payments/create"  do %>
                     <%= render partial: "partials/stripe_checkout_button" %>
-                <% end %>
                     <%= hidden_field_tag(:product_id, @product.id) %>
+                <% end %>
             </div><!-- ./ product info text -->
-
-        
-
     </div><!-- ./ row -->
 </div><!-- ./ container -->
