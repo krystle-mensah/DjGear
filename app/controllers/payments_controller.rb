@@ -1,7 +1,7 @@
 class PaymentsController < ApplicationController
     def create
     	token = params[:stripeToken]
-        # @product = Product.find(params[:product_id])
+        @product = Product.find(params[:product_id])
         @user = current_user
 
         begin
