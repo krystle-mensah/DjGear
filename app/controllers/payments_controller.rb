@@ -6,7 +6,7 @@ class PaymentsController < ApplicationController
 
         begin
             charge = Stripe::Charge.create(
-                amount: (@product.price*100).to_i, #amount in cents
+                amount: (@product.price).to_i, #amount in cents
                 currency: "gbp",
                 source: token,
                 description: params[:stripeEmail]
