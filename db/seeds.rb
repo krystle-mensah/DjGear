@@ -16,5 +16,5 @@ Product.create(name: "Turntable", description: "The modular design allows you to
 
 Product.create(name: "Dj Headphones", description: "The Numark HF125 multi-purpose headphones employ large 40mm Mylar speaker drivers, enabling you to hear exactly what's happening with your EQ or effects. ", image_url: "grayheadphones.jpg", colour: "grey", price: 57)
 
-Product.create(name: "Phono Cable Dual Mono", description: "The Phono to Phono cable is a high performance dual mono three metre male RCA to male RCA cable. Suitable for a range of live, studio and home audio applications.", image_url: "cable.jpeg", colour: "black", price: 10)
+Product.create(name: "Phono Cable Dual Mono", description: "The Phono to Phono cable is a high performance dual mono three metre male RCA to male RCA cable. Suitable for a range of live, studio and home audio applications.", image_url: "cable.jpg", colour: "black", price: 10)
 
