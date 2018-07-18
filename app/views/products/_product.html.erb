@@ -9,8 +9,8 @@
         <a href="#"><h2 class="product_name"><%= product.name %></h2></a>
         <p><%= product.description %></p>
         <p><%= product.colour %></p>
-        <strong>£ 42</strong>
-        <%# <strong><%= number_to_currency product.price, unit: '£', precision: 2 %>
+        <strong>£<%= product.price %></strong>
+        <!-- <strong><!%= number_to_currency product.price, unit: '£', precision: 2 %> -->
     </div>
 
     <br >
