@@ -3,7 +3,11 @@
 
         <div class="col-md-6 col-xs-12">
             <div>
-                <%= image_tag(@product.image_url, class: "img-responsive product-show-image img-zoom", data_zoom_image: @product.image_url) %>
+                <%= image_tag(@product.image_url, 
+                id: "zoom_product_showpage", 
+                class: "img-responsive product_show_image img_zoom", 
+                alt: @product.image_url) %>
+                <!--instead of 'alt' you could use data_zoom_image: -->
             </div>
         </div><!-- ./ col -->
 
