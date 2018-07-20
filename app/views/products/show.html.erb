@@ -7,7 +7,6 @@
                 id: "zoom_product_showpage", 
                 class: "img-responsive product_show_image img_zoom", 
                 alt: @product.image_url) %>
-                <!--instead of 'alt' you could use data_zoom_image: -->
             </div>
         </div><!-- ./ col -->
 
@@ -17,7 +16,8 @@
                     <p class="product-info-text">
                     <strong><%= @product.name %></strong></p>
                     <p class="product-info-text">
-                    <%= @product.description %>, <%= @product.colour %>
+                    <%= @product.description %>, 
+                    <%= @product.colour %>
                     </p>
                 <% end %> <!-- end of caching a product -->
             </div><!-- ./ product info box -->
@@ -40,7 +40,8 @@
             </div><!-- ./ product info text -->
 
 
-            <p class="product-info-text">Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div></p>
+            <p class="product-info-text">Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div>
+            </p>
 
             <br >
 
