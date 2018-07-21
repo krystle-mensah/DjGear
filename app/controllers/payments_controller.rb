@@ -12,6 +12,7 @@ class PaymentsController < ApplicationController
                 source: token,
                 description: params[:stripeEmail]
             )
+        end
         
         if charge.paid
             Order.create(
