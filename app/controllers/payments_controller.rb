@@ -12,16 +12,14 @@ class PaymentsController < ApplicationController
                 source: token,
                 description: params[:stripeEmail]
             )
-        end
-        
-        if charge.paid
-            Order.create(
-                product_id: @product.id, 
-                user_id: @user.id, 
-                total: @product.price
-            )
-            flash[:success] = "Your payment was processed successfully"
-        end
+            if charge.paid
+                Order.create(
+                    product_id: @product.id, 
+                    user_id: @user.id, 
+                    total: @product.price
+                )
+                flash[:success] = "Your payment was processed successfully"
+            end
 
         # The card has been declined
         rescue Stripe::CardError => e
