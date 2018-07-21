@@ -38,29 +38,51 @@
 			</div><!-- /. nav header -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-				<%= form_with(url: products_path, method: 'get', local: true,class: 'navbar-form navbar-right') do |form| %>
-					<%= form.text_field :q, id: 'q', value: params[:q], placeholder: " what are you looking for?", class: "form-control" %>	
-					<%= button_tag(class: 'btn btn-default search-btn') do %>
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    <% end %>
+			<div class="collapse navbar-collapse">
+           		<ul class="nav navbar-nav nav-color">
+           			<li><%= link_to "products", products_path, role: "button" %></li>
+					<li><%= link_to "About", about_about_path, role: "button" %></li>
+					<li><%= link_to "Contact us", contact_contact_path, role: "button" %></li>
+          		</ul>
+
+          		<ul class="nav navbar-nav navbar-right">
+		            <% if user_signed_in? %>
+		                <li role="presentation" class="dropdown">
+		                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+		                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= current_user.first_name || 'User' %> <span class="caret"></span>
+		                  </a>
+		                <ul class="dropdown-menu">
+		                    <li>
+		                      <li><%= link_to "My Orders", orders_path %></li>
+		                    </li>
+		                    <li>
+		                        <%= link_to('My Account', current_user, method: :get, class: "nav-link") %>
+		                    </li>
+		                    <% if current_user.admin? %>
+		                        <li>
+		                            <%= link_to('Manage Users', users_path, method: :get, class: "nav-link") %>
+		                        </li>
+		                    <% end %>
+		                    <li>
+		                        <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
+		                    </li>
+		               </ul>
+		              </li>
+		              <% else %>
+		              <li class="nav-item">
+		                <%= link_to('<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Login'.html_safe, new_user_session_path, class: "nav-link") %>
+		              </li>
+		            <% end %>
+            </ul><!-- nav right -->
+
+		    <%= form_with(url: products_path, method: 'get', local: true,class: 'navbar-form navbar-right') do |form| %>
+				<%= form.text_field :q, id: 'q', value: params[:q], placeholder: " what are you looking for?", class: "form-control" %>	
+				<%= button_tag(class: 'btn btn-default search-btn') do %>
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 				<% end %>
+			<% end %>
 
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown">
-						<li><%= link_to "products", products_path, role: "button" %></li>
-						<li><%= link_to "About", about_about_path, role: "button" %></li>
-						<li><%= link_to "Contact us", contact_contact_path, role: "button" %></li>
-						
-						<li>
-							<% if user_signed_in? %>
-								<li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
-							<% else %>
-								<%= link_to('Login', new_user_session_path) %>
-							<% end %>
-						</li>
-					</li><!-- /. dropdown -->
-
-				</ul><!-- /. ul nav right -->
+			
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav><!-- /. nav -->
