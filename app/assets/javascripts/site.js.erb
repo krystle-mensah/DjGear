@@ -7,7 +7,8 @@
 // jquery is selecting the document with the on method and passing turbolinks:load and function parameters of the on method
 // jQuery then selects the rating class. then is uses the raty method. the raty method goes into the asset path and gets the image and does something to it   
 
-$(document).on('turbolinks:load', function(){
+
+function refreshRating() {
     $('.rating').raty({
         starHalf: '<%= asset_path 'star-half.png' %>',
         starOff: '<%= asset_path 'star-off.png' %>',
@@ -26,6 +27,12 @@ $(document).on('turbolinks:load', function(){
             return $(this).attr('data-score');
         }
     });
+}
+
+$(document).on('turbolinks:load ajaxSuccess', function() {
+
+
+    refreshRating();
 
     $('#zoom_product_showpage').elevateZoom({
         zoomType    : "lens",
