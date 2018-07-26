@@ -13,6 +13,7 @@ Rails.application.configure do
 	config.consider_all_requests_local = true
 
 	# Enable/disable caching. By default caching is disabled.
+	# This means that if the file caching-dev.txt is found in the /tmp folder, caching will be switched on.
 	if Rails.root.join('tmp/caching-dev.txt').exist?
 		config.action_controller.perform_caching = true
 
