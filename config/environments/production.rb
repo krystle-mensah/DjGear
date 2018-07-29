@@ -86,21 +86,30 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  require 'dalli'
+  config.cache_store = :dalli_store,
+                    (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+                    {:username => ENV["MEMCACHIER_USERNAME"],
+                     :password => ENV["MEMCACHIER_PASSWORD"],
+                     :failover => true,
+                     :socket_timeout => 1.5,
+                     :socket_failure_delay => 0.2,
+                     :down_retry_delay => 60
+                    }
+
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-end
-
-ActionMailer::Base.smtp_settings = {
-  address: 'smtp.sendgrid.net',
-  port: '587',
-  authentication: :plain,
-  user_name: ENV['SENDGRID_USERNAME'],
-  password: ENV['SENDGRID_PASSWORD'],
-  domain: 'heroku.com',
-  enable_starttls_auto: true
-}
 
 
-# when i push to heroku this line of code from the task wont allow me to push so i have edited out
-
+  ActionMailer::Base.smtp_settings = {
+    address: 'smtp.sendgrid.net',
+    port: '587',
+    authentication: :plain,
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
+    domain: 'heroku.com',
+    enable_starttls_auto: true
+  }
 # config.action_mailer.default_url_options = { host: ‘djgear.herokuapp.com’ }
+end

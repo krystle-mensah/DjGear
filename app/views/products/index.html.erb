@@ -18,11 +18,14 @@
 <section class="all_products">
 	<div class="container">
 	    <div class="row">
-
-	        <%# _products.html.erb %>
+	     
+	     <% cache (cache_key_for_products) do %>
 	        <%= render 'products/product', locals: { product: @product } %>
-
+         <% end %>  
+	    
 	    </div><!-- ./ row -->
 	</div><!-- ./ container -->	
 </section><!-- ./ all products -->
+
+
 
