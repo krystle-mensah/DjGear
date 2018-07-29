@@ -9,35 +9,34 @@
 
 
 function refreshRating() {
-    $('.rating').raty({
-        starHalf: '<%= asset_path 'star-half.png' %>',
-        starOff: '<%= asset_path 'star-off.png' %>',
-        starOn: '<%= asset_path 'star-on.png' %>',
-        // its turns the star into a number
-        scoreName: 'comment[rating]'
-    });
-  
-    $('.rated').raty({
-        starHalf: '<%= asset_path 'star-half.png' %>',
-        starOff: '<%= asset_path 'star-off.png' %>',
-        starOn: '<%= asset_path 'star-on.png' %>',
-        readOnly: true,
-        
-        score: function() {
-            return $(this).attr('data-score');
-        }
-    });
+  $('.rating').raty({
+    starHalf: '<%= asset_path 'star-half.png' %>',
+    starOff: '<%= asset_path 'star-off.png' %>',
+    starOn: '<%= asset_path 'star-on.png' %>',
+    // its turns the star into a number
+    scoreName: 'comment[rating]'
+  });
+
+  $('.rated').raty({
+    starHalf: '<%= asset_path 'star-half.png' %>',
+    starOff: '<%= asset_path 'star-off.png' %>',
+    starOn: '<%= asset_path 'star-on.png' %>',
+    readOnly: true,
+    
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
 }
 
 $(document).on('turbolinks:load ajaxSuccess', function() {
 
-
     refreshRating();
 
     $('#zoom_product_showpage').elevateZoom({
-        zoomType    : "lens",
-        lensShape : "round",
-        lensSize  : 200
+      zoomType    : "lens",
+      lensShape : "round",
+      lensSize  : 200
     });
 
 });
