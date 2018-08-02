@@ -1,16 +1,20 @@
 Rails.application.configure do
 	# Settings specified here will take precedence over those in config/application.rb.
-
+	
 	# In the development environment your application's code is reloaded on
 	# every request. This slows down response time but is perfect for development
 	# since you don't have to restart the web server when you make code changes.
 	config.cache_classes = false
+
+	config.app_generators.javascript_engine = :javascript
 
 	# Do not eager load code on boot.
 	config.eager_load = false
 
 	# Show full error reports.
 	config.consider_all_requests_local = true
+
+	config.action_controller.page_cache_directory = "#{Rails.root}/public/cached_pages"
 
 	# Enable/disable caching. By default caching is disabled.
 	# This means that if the file caching-dev.txt is found in the /tmp folder, caching will be switched on.
@@ -26,6 +30,9 @@ Rails.application.configure do
 
 		config.cache_store = :null_store
 	end
+
+	# so any dynamic links that show up inside emails from your development environment generate the right URLs.
+	config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
 	# Don't care if the mailer can't send.
 	config.action_mailer.raise_delivery_errors = false
@@ -53,6 +60,5 @@ Rails.application.configure do
 	# routes, locales, etc. This feature depends on the listen gem.
 	config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-	# so any dynamic links that show up inside emails from your development environment generate the right URLs.
-	config.action_mailer.default_url_options = { host: 'localhost:3000' }
+	# config.cache_store = :dalli_store, '127.0.0.1'
 end

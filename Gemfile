@@ -74,3 +74,7 @@ gem "brakeman"
 gem 'dalli'
 
 gem 'redis-rails'
+
+# caching
+gem 'actionpack-action_caching'
+gem "actionpack-page_caching"
