@@ -75,6 +75,8 @@ gem 'dalli'
 
 gem 'redis-rails'
 
+=begin
 # caching
 gem 'actionpack-action_caching'
 gem "actionpack-page_caching"
+=end

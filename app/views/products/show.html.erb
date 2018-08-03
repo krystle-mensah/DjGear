@@ -11,14 +11,14 @@
 
         <div class="col-md-6 col-xs-12">
             <div class="product-info-box">
-                <%# cache @product do %> <!--to cache a product -->
+                <% cache @product do %> <!--to cache a product -->
                     <p class="product-info-text">
                     <strong><%= @product.name %></strong></p>
                     <p class="product-info-text">
                     <%= @product.description %>, 
                     <%= @product.colour %>
                     </p>
-                <%# end %> <!-- end of caching a product -->
+                <% end %> <!-- end of caching a product -->
             </div><!-- ./ product info box -->
 
             <br>
