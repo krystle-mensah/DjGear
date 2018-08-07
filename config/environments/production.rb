@@ -112,4 +112,6 @@ Rails.application.configure do
     enable_starttls_auto: true
   }
 # config.action_mailer.default_url_options = { host: ‘djgear.herokuapp.com’ }
+  config.web_socket_server_url = "wss://djgear.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://djgear.herokuapp.com', 'http://djgear.herokuapp.com']
 end
