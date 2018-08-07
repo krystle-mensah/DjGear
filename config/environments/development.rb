@@ -6,6 +6,7 @@ Rails.application.configure do
 	# since you don't have to restart the web server when you make code changes.
 	config.cache_classes = false
 
+	# This will tell the rails generator to generate plain javascript files instead of coffee script files.
 	config.app_generators.javascript_engine = :javascript
 
 	# Do not eager load code on boot.
@@ -13,8 +14,6 @@ Rails.application.configure do
 
 	# Show full error reports.
 	config.consider_all_requests_local = true
-
-	# config.action_controller.page_cache_directory = "#{Rails.root}/public/cached_pages"
 
 	# Enable/disable caching. By default caching is disabled.
 	if Rails.root.join('tmp/caching-dev.txt').exist?
@@ -61,6 +60,4 @@ Rails.application.configure do
 	# Use an evented file watcher to asynchronously detect changes in source code,
 	# routes, locales, etc. This feature depends on the listen gem.
 	config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-
-	# config.cache_store = :dalli_store, '127.0.0.1'
 end

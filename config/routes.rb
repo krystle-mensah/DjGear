@@ -14,8 +14,6 @@ Rails.application.routes.draw do
       resources :comments
     end
 
-
-
     get '/products', to: 'products#index'
 
     get 'home/index'
@@ -30,8 +28,8 @@ Rails.application.routes.draw do
     get 'landing_pages/index'
 
 
-    root 'landing_pages#index'  
-end
+    root 'landing_pages#index'
 
-
+    mount ActionCable.server => '/cable'
+end    
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
