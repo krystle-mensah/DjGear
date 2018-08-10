@@ -34,6 +34,9 @@ Rails.application.configure do
 	config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
 	default_url_options
+	
+	# error message i was getting about websocket. 
+	config.action_cable.allowed_request_origins = ['http://localhost:3000']
 
 	# Don't care if the mailer can't send.
 	config.action_mailer.raise_delivery_errors = false
