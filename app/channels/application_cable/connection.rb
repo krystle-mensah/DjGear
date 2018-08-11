@@ -1,5 +1,6 @@
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
+    # The line below will identify each connection by the current_user who’s connection to the app.
     identified_by :current_user
 
     def connect
