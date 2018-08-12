@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
 
     get '/products', to: 'products#index'
+    get '/products', to: 'products#show'
 
     get 'home/index'
 

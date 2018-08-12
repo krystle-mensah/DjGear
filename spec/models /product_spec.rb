@@ -1,31 +1,24 @@
 require 'rails_helper'
-# to tell RSpec which model we want to test
 
-RSpec.describe Product, :type => :model do
-	context "when the product has comments" do
+describe Product do
 
-		let(:product) { Product.create!(name: "custom bike", description: "awesome bike", colour: "red" ) }
+  let(:product) {
+    # product_category = Category.create!(name: 'Paintings', description: 'A selection of locally sourced paintings', image_url: 'products/p1.jpg')
+    Product.create!(name: 'Product1', description: 'This is the first system generated product', image_url: 'products/s2.jpg',)
+  }
 
-		let (:user) {User.create(first_name: "Mark", last_name:"Johnson", email: "MPrice3@hotmail.com", password: "23478734")}
+  let(:user) {User.create!(email: 'test@test.com', password: 'test123')}
+  before do
+    product.comments.create!(rating: 1, user: user, body: "Awfull Painting")
+    product.comments.create(rating: 3, user: user, body: 'OK Painting')
+    product.comments.create!(rating: 5, user: user, body: 'Greate Painting')
+  end
 
+  it 'returns the average rating off all comments' do
+    expect(product.average_rating).to eq 3
+  end
 
-		before do
-		    product.comments.create!(rating: 1, user: user, body: "Awful bike!")
-		    product.comments.create!(rating: 3, user: user, body: "Ok bike!")
-		    product.comments.create!(rating: 5, user: user, body: "Great bike!")
-		end
-
-
-		it "returns the average rating of all comments" do
-			expect(product.average_rating).to eq 3
-		end
-
-		
-		it "is not valid without a name" do
-	        expect(Product.new(description: "cool bike")).not_to be_valid
-	    end
-
-
-
-     end 
+  it 'is not valid without a name' do
+    expect(Product.new(description: 'Cool painting')).not_to be_valid
+  end
 end
