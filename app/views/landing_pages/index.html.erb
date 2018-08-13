@@ -43,9 +43,10 @@
     </div><!-- ./ container -->
 </section><!-- ./ Bootstrap_carousel -->
 
+<%if @featured_product %>
 <section id="featured_product">  
     <div class="container">
-        <h1>Featured Product:</h1>
+        <h2>Featured Product:</h2>
             <div class="box">
                 <%= image_tag@featured_product.image_url %>
                 <h3><%= @featured_product.name %></h3>
@@ -53,4 +54,5 @@
             </div><!-- ./ box -->
     </div><!-- ./  container -->
 </section><!-- ./ featured_product -->
+<% end %>
  
