@@ -5,14 +5,13 @@ class ProductsController < ApplicationController
         #if Rails.env.development?
         #byebug
         #end 
-        @products = Product.all.paginate(page: params[:page], per_page: 5)
-    		if params[:q]
-                search_term = params[:q]
-                # return our filtered list here
-                @products = Product.search(search_term)
-            else
-    		    @products = Product.all
-    		end
+		if params[:q]
+			search_term = params[:q]
+			@products = Product.search(search_term)
+		else
+			# number of products per page on the index page
+			@products = Product.paginate(page: params[:page], per_page: 3)
+		end
 	end
 
 
