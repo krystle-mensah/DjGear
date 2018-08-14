@@ -16,20 +16,25 @@ class CommentsController < ApplicationController
       else
         format.html { redirect_to @product, alert: 'Review was not saved successfully.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end # end if/else
-    end #end do
-  end #end create
-
+      end
+    end 
+  end 
   def destroy
     @comment = Comment.find(params[:id])
     product = @comment.product
     @comment.destroy
+    flash[:notice] = 'Comment has been destroyed'
     redirect_to product
-  end # end destroy
+  end 
 
   private
 
   def comment_params
     params.require(:comment).permit(:user_id, :body, :rating)
-  end # comment_params
+  end
+  # def authorize_admin
+  #   if current_user.blank? || !current_user.admin?
+  #     redirect_to root_path, alert: 'Admins only!'
+  #   end
+  # end 
 end # end comments controller. 

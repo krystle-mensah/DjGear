@@ -12,6 +12,8 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
     $(".alert.alert-info").show();
     $('.product-reviews').prepend(data.comment);
     $("#average-rating").attr('data-score', data.average_rating);
+    $("#average-rating").html('<p>Average rating<div class="rated" data-score=' + data.average_rating +'></div></p>');
+    
     refreshRating();
   },
   

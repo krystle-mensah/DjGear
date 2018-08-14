@@ -3,7 +3,6 @@ require 'rails_helper'
 describe Product do
 
   let(:product) {
-    # product_category = Category.create!(name: 'Paintings', description: 'A selection of locally sourced paintings', image_url: 'products/p1.jpg')
     Product.create!(name: 'Product1', description: 'This is the first system generated product', image_url: 'products/s2.jpg',)
   }
 

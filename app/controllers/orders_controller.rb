@@ -2,12 +2,12 @@ class OrdersController < ApplicationController
     before_action :authenticate_user!
      
     def index
-        # all the orders made by users
-        @orders = Order.all
+      # all the orders made by users
+      @orders = Order.all
     end
   
     def show
-        @order = Order.find(params[:id])
+      @order = Order.find(params[:id])
     end
   
     def new

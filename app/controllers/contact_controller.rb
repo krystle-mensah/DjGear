@@ -10,4 +10,3 @@ class ContactController < ApplicationController
 		UserMailer.contact_form(@email, @name, @message).deliver_now
 	end
 end
-
